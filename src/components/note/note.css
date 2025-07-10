@@ -1,0 +1,23 @@
+.note__container {
+	width: 200px;
+	height: 150px;
+	background-color: #f7f7f7;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+	cursor: pointer;
+	overflow: auto;
+	transition: transform 0.2s;
+}
+
+.note__container:hover {
+	transform: scale(1.05);
+}
+
+.note__text {
+	padding: 10px;
+
+}
+
+.note__container::-webkit-scrollbar {
+	display: none;
+}
