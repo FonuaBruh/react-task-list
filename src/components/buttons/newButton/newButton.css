@@ -2,7 +2,7 @@
 	margin-top: 30px;
 	padding: 25px;
 
-	background-color: #AFE1AF;
+	background-color: var(--main-green);
 	color: #fff;
 	font-size: 24px;
 	font-weight: 600;

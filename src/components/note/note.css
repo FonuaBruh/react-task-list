@@ -8,7 +8,7 @@
 .note__container {
 	width: 200px;
 	height: 150px;
-	background-color: #fef5e7;
+	background-color: var(--default-note);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	display: flex;
 	justify-content: center;
@@ -42,12 +42,12 @@
 }
 
 .delete-button {
-	color: #f1948a;
+	color: var(--delete-red);
 	border: none;
 	cursor: pointer;
 	font-weight: 800;
 }
 
 .delete-button:hover {
-	color: #e74c3c;
+	color: var(--secondary-red);
 }
