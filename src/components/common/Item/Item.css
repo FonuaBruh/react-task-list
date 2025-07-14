@@ -1,12 +1,12 @@
 .item {
 	width: 260px;
-	border: 1px solid #2c3e50;
+	border: 1px solid var(--border-color);
 	padding: 10px 5px;
 	border-radius: 6px;
 	margin: 2px 0;
 	cursor: grab;
-	background-color: #17202a;
-	color: #abb2b9;
+	background-color: var(--main-color);
+	color: var(--text-color);
 
 	display: grid;
 	grid-template-columns: 1fr 8fr;
