@@ -4,6 +4,7 @@ import AddTask from "./common/TaskInput";
 import { useBoards } from "../utils/useBoards";
 import { useDragAndDrop } from "../utils/dragAndDrop";
 import "./App.css";
+import LeftMenu from "./common/LeftMenu";
 
 const initialBoards = [
 	{
@@ -48,19 +49,26 @@ function App() {
 
 	return (
 		<div className="app">
-			{boards.map((board) => (
-				<Board
-					key={board.id}
-					board={board}
-					onDragOver={dragOverHandler}
-					onDragLeave={dragLeaveHandler}
-					onDragStart={dragStartHandler}
-					onDragEnd={dragEndHandler}
-					onDrop={dropHandler}
-				/>
-			))}
-			<div>
-				<AddTask onAddTask={handleAddTask} />
+			<div className="left-area">
+				<LeftMenu />
+			</div>
+			<div className="right-area">
+				<div className="board-area">
+					{boards.map((board) => (
+						<Board
+							key={board.id}
+							board={board}
+							onDragOver={dragOverHandler}
+							onDragLeave={dragLeaveHandler}
+							onDragStart={dragStartHandler}
+							onDragEnd={dragEndHandler}
+							onDrop={dropHandler}
+						/>
+					))}
+				</div>
+				<div className="input-area">
+					<AddTask onAddTask={handleAddTask} />
+				</div>
 			</div>
 		</div>
 	);

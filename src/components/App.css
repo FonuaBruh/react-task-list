@@ -8,26 +8,61 @@
 
 .app {
 	width: 100vw;
-	min-height: 100vh;
+	height: 100vh;
 	font-family: "Roboto", sans-serif;
 
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(4, 300px);
-	gap: 20px;
+	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding: 20px 0;
+	justify-content: space-around;
 }
 
-@media screen and (max-width: 1300px) {
-	.app {
+.right-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 150px;
+}
+
+.input-area {
+
+}
+
+.board-area {
+	display: grid;
+	grid-template-columns: repeat(4, 300px);
+	gap: 10px;
+	margin: 0 20px;
+}
+
+@media screen and (max-width: 1700px) {
+	.board-area {
 		grid-template-columns: repeat(2, 300px);
+		padding-top: 20px;
+	}
+
+	.app {
+		height: auto;
+		width: auto;
+		justify-content: space-around;
 	}
 }
 
-@media screen and (max-width: 670px) {
-	.app {
+@media screen and (max-width: 1070px) {
+	.board-area {
 		grid-template-columns: repeat(1, 300px);
+	}
+
+	.right-area {
+		flex-direction: column-reverse;
+		margin-bottom: 10px;
+	}
+
+	.app {
+		flex-direction: column;
+	}
+
+	.left-area {
+		padding-top: 20px;
 	}
 }
