@@ -24,10 +24,6 @@
 	margin: 0 150px;
 }
 
-.input-area {
-
-}
-
 .board-area {
 	display: grid;
 	grid-template-columns: repeat(4, 300px);
@@ -64,5 +60,10 @@
 
 	.left-area {
 		padding-top: 20px;
+	}
+
+	.item-tools {
+		opacity: 1;
+		margin-top: 0;
 	}
 }
