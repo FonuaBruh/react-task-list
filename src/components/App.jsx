@@ -58,6 +58,8 @@ function App() {
 						<Board
 							key={board.id}
 							board={board}
+							boards={boards}
+							setBoards={setBoards}
 							onDragOver={dragOverHandler}
 							onDragLeave={dragLeaveHandler}
 							onDragStart={dragStartHandler}

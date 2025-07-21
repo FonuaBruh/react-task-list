@@ -4,6 +4,8 @@ import "./Board.css";
 
 const Board = ({
 	board,
+	boards,
+	setBoards,
 	onDragOver,
 	onDrop,
 	onDragStart,
@@ -26,6 +28,8 @@ const Board = ({
 						key={item.id}
 						item={item}
 						board={board}
+						boards={boards}
+						setBoards={setBoards}
 						onDragStart={onDragStart}
 						onDragEnd={onDragEnd}
 						onDragOver={onDragOver}
