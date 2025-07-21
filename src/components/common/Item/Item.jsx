@@ -79,7 +79,7 @@ const Item = ({
 				<p
 					className="delete-button"
 					onClick={() =>
-						deleteNote(boards, setBoards, board.id, item.id)
+						deleteNote(setBoards, board.id, item.id)
 					}
 				>
 					×

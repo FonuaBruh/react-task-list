@@ -30,22 +30,19 @@ export const useDragAndDrop = (boards, setBoards) => {
 
 		if (!currentItem) return;
 
-		const newBoards = [...boards];
+		const newBoards = JSON.parse(JSON.stringify(boards));
 		const currentBoardIndex = newBoards.findIndex(
 			(b) => b.id === currentBoard.id
 		);
 		const targetBoardIndex = newBoards.findIndex((b) => b.id === board.id);
 
+		newBoards[currentBoardIndex].items = newBoards[
+			currentBoardIndex
+		].items.filter((item) => item.id !== currentItem.id);
+
 		if (!item) {
-			const currentItemIndex =
-				newBoards[currentBoardIndex].items.indexOf(currentItem);
-			newBoards[currentBoardIndex].items.splice(currentItemIndex, 1);
 			newBoards[targetBoardIndex].items.push(currentItem);
 		} else {
-			const currentItemIndex =
-				newBoards[currentBoardIndex].items.indexOf(currentItem);
-			newBoards[currentBoardIndex].items.splice(currentItemIndex, 1);
-
 			const dropIndex = newBoards[targetBoardIndex].items.indexOf(item);
 			newBoards[targetBoardIndex].items.splice(
 				dropIndex + 1,
