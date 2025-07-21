@@ -1,4 +1,3 @@
-// Item.jsx
 import React from "react";
 import "./Item.css";
 import DragIcon from "../../UI/DragIcon";
@@ -17,8 +16,15 @@ const Item = ({
 	onDrop,
 }) => {
 	const currentBoardIndex = boards.findIndex((b) => b.id === board.id);
-	const canMoveLeft = currentBoardIndex > 0;
-	const canMoveRight = currentBoardIndex < boards.length - 1;
+	const isLastBoard = currentBoardIndex === boards.length - 1;
+
+	const handleComplete = () => {
+		if (isLastBoard) {
+			deleteNote(boards, setBoards, board.id, item.id);
+		} else {
+			moveNote(boards, setBoards, board.id, item.id, "right");
+		}
+	};
 
 	return (
 		<div
@@ -33,9 +39,11 @@ const Item = ({
 			<DragIcon />
 			<div className="text">{item.title}</div>
 			<div className="item-tools">
-				<p className="done-button">✔</p>
+				<p className="done-button" onClick={handleComplete}>
+					✔
+				</p>
 				<div className="move-note">
-					{canMoveLeft && (
+					{currentBoardIndex > 0 && (
 						<p
 							className="move-left-button"
 							onClick={() =>
@@ -51,7 +59,7 @@ const Item = ({
 							←
 						</p>
 					)}
-					{canMoveRight && (
+					{currentBoardIndex < boards.length - 1 && (
 						<p
 							className="move-right-button"
 							onClick={() =>
