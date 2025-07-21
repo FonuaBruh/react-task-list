@@ -1,7 +1,9 @@
+// Item.jsx
 import React from "react";
 import "./Item.css";
 import DragIcon from "../../UI/DragIcon";
 import { deleteNote } from "../../../utils/useDeleteNote";
+import { moveNote } from "../../../utils/useMoveNote";
 
 const Item = ({
 	item,
@@ -14,6 +16,10 @@ const Item = ({
 	onDragLeave,
 	onDrop,
 }) => {
+	const currentBoardIndex = boards.findIndex((b) => b.id === board.id);
+	const canMoveLeft = currentBoardIndex > 0;
+	const canMoveRight = currentBoardIndex < boards.length - 1;
+
 	return (
 		<div
 			className="item"
@@ -29,8 +35,38 @@ const Item = ({
 			<div className="item-tools">
 				<p className="done-button">✔</p>
 				<div className="move-note">
-					<p className="move-right-button">←</p>
-					<p className="move-left-button">→</p>
+					{canMoveLeft && (
+						<p
+							className="move-left-button"
+							onClick={() =>
+								moveNote(
+									boards,
+									setBoards,
+									board.id,
+									item.id,
+									"left"
+								)
+							}
+						>
+							←
+						</p>
+					)}
+					{canMoveRight && (
+						<p
+							className="move-right-button"
+							onClick={() =>
+								moveNote(
+									boards,
+									setBoards,
+									board.id,
+									item.id,
+									"right"
+								)
+							}
+						>
+							→
+						</p>
+					)}
 				</div>
 				<p
 					className="delete-button"
