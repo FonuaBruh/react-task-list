@@ -30,7 +30,7 @@ const initialBoards = [
 ];
 
 function App() {
-	const { boards, setBoards, addTaskToNotes } = useBoards(initialBoards);
+	const { boards, setBoards, addTaskToNotes, resetBoards } = useBoards(initialBoards);
 	const {
 		dragOverHandler,
 		dragLeaveHandler,
@@ -50,7 +50,7 @@ function App() {
 	return (
 		<div className="app">
 			<div className="left-area">
-				<LeftMenu />
+				<LeftMenu resetBoards={resetBoards} />
 			</div>
 			<div className="right-area">
 				<div className="board-area">
