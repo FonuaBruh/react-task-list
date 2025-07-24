@@ -34,7 +34,7 @@ Task Flow Board is a modern Kanban-style task management application that helps 
 - **Vanilla JavaScript** for JSON export/import
 
 ### 🎯 Live Demo
-[Demo Link](#) (https://fonuabruh.github.io/react-task-list)
+[Demo Link](https://fonuabruh.github.io/react-task-list)
 
 ### 🏃‍♂️ Getting Started
 1. Clone the repository
@@ -73,7 +73,7 @@ Task Flow Board — современное приложение для упра�
 - **Vanilla JavaScript** для экспорта/импорта JSON
 
 ### 🎯 Демо
-[Ссылка на демо](#) (https://fonuabruh.github.io/react-task-list)
+[Ссылка на демо](https://fonuabruh.github.io/react-task-list)
 
 ### 🏃‍♂️ Как начать
 1. Клонируйте репозиторий
