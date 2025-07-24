@@ -20,7 +20,7 @@ const Item = ({
 
 	const handleComplete = () => {
 		if (isLastBoard) {
-			deleteNote(boards, setBoards, board.id, item.id);
+			deleteNote(setBoards, board.id, item.id);
 		} else {
 			moveNote(boards, setBoards, board.id, item.id, "right");
 		}

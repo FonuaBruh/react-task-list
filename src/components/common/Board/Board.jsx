@@ -19,7 +19,7 @@ const Board = ({
 			onDrop={(e) => onDrop(e, board)}
 		>
 			<div className="board__header">
-				<div className="board__title">{board.title}</div>
+				<div className="board__title">{board.title} ({board.items.length})</div>
 				<div className="line"></div>
 			</div>
 			<div className="board__content">
