@@ -87,5 +87,5 @@ Task Flow Board — современное приложение для упра�
 
 <div align="center">
   <h3>📝 License</h3>
-  <p>MIT © 2023</p>
+  <p>MIT © 2025</p>
 </div>
